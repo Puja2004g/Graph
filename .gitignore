@@ -1,3 +1,3 @@
-BFS_implementation.exe
-DFS_implementation.exe
-dfs.exe
+*.exe
+*.class
+*.c
