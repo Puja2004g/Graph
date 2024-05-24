@@ -22,7 +22,7 @@ public class BFS_graph {
     }
 
     public static void main(String args[]) {
-        int V = 4;
+        int V = 7;
         ArrayList<create_graph.Edge> graph[] = new ArrayList[V];
         create_graph.createGraph(graph);
         bfs(graph, V);
