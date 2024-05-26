@@ -26,7 +26,7 @@ public class bellmanFordAlgorithm {
 
         graph[3].add(new edge(3, 4, 4));
 
-        graph[4].add(new edge(4, 1, -1 ));
+        graph[4].add(new edge(4, 1, -1));
     }
 
     public static void bellmanFord(ArrayList<edge> graph[], int src, int v){
@@ -34,6 +34,9 @@ public class bellmanFordAlgorithm {
         for(int i=0;i<v;i++){
             if(i!=src){
                 dist[i] = Integer.MAX_VALUE;
+            }
+            else{
+                dist[i] = 0;
             }
         }
 
@@ -48,6 +51,19 @@ public class bellmanFordAlgorithm {
                     if(dist[u] != Integer.MAX_VALUE && dist[e.src] + e.wt < dist[e.dest]){
                         dist[e.dest] = dist[e.src] + e.wt;
                     }
+                }
+            }
+        }
+
+        //negetive weight cycle
+        for(int i=0;i<v;i++){
+            for(int j=0;j<graph[i].size();j++){
+                edge e = graph[i].get(j);
+                int u=e.src;
+                int d=e.dest;
+
+                if(dist[u] != Integer.MAX_VALUE && dist[e.src] + e.wt < dist[e.dest]){
+                   System.out.println("Negetive weight cycle");
                 }
             }
         }
