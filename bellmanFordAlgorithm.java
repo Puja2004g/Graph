@@ -48,8 +48,8 @@ public class bellmanFordAlgorithm {
                     int u=e.src;
                     int d=e.dest;
 
-                    if(dist[u] != Integer.MAX_VALUE && dist[e.src] + e.wt < dist[e.dest]){
-                        dist[e.dest] = dist[e.src] + e.wt;
+                    if(dist[u] != Integer.MAX_VALUE && dist[e.src] + e.wt < dist[d]){
+                        dist[d] = dist[e.src] + e.wt;
                     }
                 }
             }
